@@ -3,13 +3,6 @@ import numpy as np
 
 cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)
 
-def averageColor(img):
-    avgColorPerRow = np.average(img, axis=0)
-    avgColor = np.average(avgColorPerRow, axis=0)
-    # opencv'de renkler RGB yerine BGR olarak sıralandığı için 2,1,0 diye sıralandı yani 2=B,1=G,0=R.
-    myColor = (int(avgColor[2]), int(avgColor[1]), int(avgColor[0]))
-    return myColor
-
 while True:
 
     # kameradan alınan görüntüleri "frame"e kayıt eder.
